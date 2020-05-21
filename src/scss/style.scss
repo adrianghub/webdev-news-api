@@ -20,14 +20,13 @@ body {
 
 .articles {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     max-width: $maxWidth;
 
     
     &__header {
-        display: flex;
         background-color: #eee;
-        justify-content: space-around;
         padding: 32px;
         width: 100%;
         position: fixed;
@@ -36,7 +35,9 @@ body {
     }
 
     &__heading {
+        text-align: center;
         font-size: 36px;
+        margin-bottom: 20px;
     }
 }
 
@@ -93,5 +94,13 @@ body {
         margin-top: 5px;
         padding: $padding;
     }
+}
+
+@media (min-width: 1024px) {
+    .articles__header {
+            display: flex;
+            background-color: #eee;
+            justify-content: space-around;
+        }
 }
 
