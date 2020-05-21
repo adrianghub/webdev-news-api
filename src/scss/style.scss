@@ -1,5 +1,87 @@
-$bgColor: #333;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,600&display=swap');
+
+$bgColor: #fafafa;
+$maxWidth: 1200px;
+$marginRight: 30px;
+$padding: 5px 10px;
+$fontFamily: 'Montserrat', sans-serif;
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 
 body {
     background-color: $bgColor;
+    font-family: $fontFamily;
 }
+
+.articles {
+    display: flex;
+    justify-content: center;
+    max-width: $maxWidth;
+
+    
+    &__header {
+        display: flex;
+        background-color: #eee;
+        justify-content: space-around;
+        padding: 32px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    &__heading {
+        font-size: 36px;
+    }
+}
+
+.event-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    margin-right: $marginRight;
+
+    &__label {
+        margin-right: $marginRight;
+    }
+    
+    &__input {
+        margin-top: 5px;
+        margin-right: $marginRight;
+        padding: $padding;
+    }
+    
+    &__button {
+        margin-right: $marginRight;
+        padding: 5px 30px;
+        position: relative;
+        top: 10px;
+    }
+    
+}
+
+.sort-by {
+    display: flex;
+    flex-direction: column;
+    margin-right: $marginRight;
+
+    &__label {
+        margin-right: $marginRight;
+    }
+
+    &__select {
+        margin-top: 5px;
+        padding: $padding;
+    }
+}
+
