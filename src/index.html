@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebDev News API</title>
 </head>
+
 <body>
-    <h1>Web Developer News Service</h1>
+    <main class="articles">
+
+        <header class="articles__header">
+            <div>
+                <h1 class="articles__heading">WebDeb News API</h1>
+            </div>
+            <div class="event-wrapper">
+                <div class="sort-by">
+                    <label for="sort-by" class="sort-by__label">Sortuj wg</label>
+                    <select name="sort-by" id="sort-by" class="sort-by__select" data-select>
+                        <option value="publishedAt">data opublikowania</option>
+                        <option value="popularity">popularność</option>
+                        <option value="relevency">zgodność</option>
+                    </select>
+                </div>
+                <div class="search">
+                    <label for="search" class="search__label">Wyszukaj artykuł</label>
+                    <input type="text" name="search" id="search" class="search__input" placeholder="Wyszukaj artykuł..."
+                        data-search>
+                </div>
+                <button class="search__button" data-button>Szukaj</button>
+            </div>
+        </header>
+        <section class="article"></section>
+    </main>
 </body>
+
 </html>
