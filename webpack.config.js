@@ -6,14 +6,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
 
-    entry: ['./src/js/index.js'],
+    entry: './src/js/index.js',
 
     mode: 'development',
 
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name]-[hash].bundle.js',
-        publicPath: '/'
+        filename: '[name]-[contenthash].bundle.js',
     },
 
     devServer: {
@@ -38,7 +37,7 @@ module.exports = {
             template: "./src/index.html"
         }),
         new MiniCssExtractPlugin({
-            filename: '[name]-[hash].css'
+            filename: '[name]-[contenthash].css'
         })
     ]
 }
