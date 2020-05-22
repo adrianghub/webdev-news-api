@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
 
-    entry: './src/js/index.js',
+    entry: ['./src/js/index.js'],
 
     mode: 'development',
 
@@ -29,18 +29,12 @@ module.exports = {
                 test: /\.sass|scss$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             },
-            {
-                test: /\.js$/,
-                use: ['babel-loader'],
-                exclude: /node_modules/
-            },
 
-        ]
+        ],
     },
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            title: "WebDev News API",
             template: "./src/index.html"
         }),
         new MiniCssExtractPlugin({
