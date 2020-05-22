@@ -44,11 +44,14 @@ export class WebDevNews {
     }
     
     addEventListeners() {
-		this.loadButton.addEventListener('click', () => this.pullArticles());;
+		this.loadButton.addEventListener('click', () => this.pullArticles());
+		this.searchButton.addEventListener('click', () => this.filterArticles());
 	}
 
 	async pullArticles() {
-        const { articles } = await this.fetchData(`${this.API_ENDPOINT}&page=${this.currentPage}&pageSize=${this.pageSize}`);
+		this.toggleShowElement(this.loader, this.loadButton);
+		const { articles } = await this.fetchData(`${this.API_ENDPOINT}&page=${this.currentPage}&pageSize=${this.pageSize}`);
+		this.toggleShowElement(this.loader, this.loadButton);
 
 		this.articlesArray = [...this.articlesArray, ...articles]
 		this.newArticlesArray = [...articles];
@@ -104,5 +107,19 @@ export class WebDevNews {
             </article>
         `;
 	};
+
+	filterArticles() {
+		const searchQuery = this.search.value.toLowerCase();
+
+		searchQuery.length 
+			? this.loadButton.classList.add('hide')
+			: this.loadButton.classList.remove('hide');
+
+		document.querySelectorAll(this.UISelectors.article).forEach((el) => el.classList.remove('hide'));
+		
+		const filteredArticles = this.articlesArray.filter(({title}) => !title.toLowerCase().includes(searchQuery));
+
+		filteredArticles.forEach(({source: {id}}) => document.getElementById(id).classList.add("hide"));
+	}
 
 }
