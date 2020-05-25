@@ -103,11 +103,22 @@ body {
     .sort-by__select:hover {
       outline: none; }
 
-@media (min-width: 720px) {
-  .event-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center; } }
+.event-wrapper {
+  display: none; }
+  @media (min-width: 720px) {
+    .event-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center; } }
+
+.burger-menu {
+  cursor: pointer; }
+  @media (min-width: 720px) {
+    .burger-menu {
+      display: none; } }
+
+.event-wrapper--open {
+  display: block; }
 
 .article {
   border-radius: 5px;
