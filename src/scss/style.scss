@@ -149,14 +149,28 @@ body {
     }
 }
 
-@media (min-width: $phoneMediaWidth) {
+.event-wrapper {
+  display: none;
  
-    .event-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  @media (min-width: $phoneMediaWidth) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
+
+.burger-menu {
+  cursor: pointer;
+
+  @media (min-width: $phoneMediaWidth) {
+    display: none;
+  }
+}
+
+.event-wrapper--open {
+  display: block;
+}
+
 
 .article {
     border-radius: 5px;

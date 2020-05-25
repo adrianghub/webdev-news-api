@@ -12,7 +12,7 @@ module.exports = {
 
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name]-[contenthash].bundle.js',
+        filename: '[name]-[hash].bundle.js',
     },
 
     devServer: {
@@ -37,7 +37,7 @@ module.exports = {
             template: "./src/index.html"
         }),
         new MiniCssExtractPlugin({
-            filename: '[name]-[contenthash].css'
+            filename: '[name]-[hash].css'
         })
     ]
 }
